@@ -24,4 +24,4 @@ I'm always open to collaborating on projects and innovative ideas. If you're int
 ---
 
 ✨ _"You do not rise to the level of your goals.
-        you fall to the level ov your systems." - James Clear_ ✨
+        You fall to the level of your systems." - James Clear_ ✨
