@@ -1,9 +1,6 @@
 ## Hi there 👋
 
 <section id="about">
-        <img class="poster"
-                src="./assets/coworking-male-programmer-writing-program-code.gif" 
-                alt="A man programming on his computer">
         <div>
                 <h4>About Me 📚</h4>
                 <p>
@@ -63,45 +60,3 @@ I'm always open to collaborating on projects and innovative ideas. If you're int
 ✨ _"You do not rise to the level of your goals.
         You fall to the level of your systems." - James Clear_ ✨
         
-<style>
-        @media(max-width: 768px) {
-                section#about {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                }
-                section#about img.poster {
-                        display: none;
-                }
-                section#about div {
-                        width: 100%;
-                }
-        }
-        @media(min-width: 768px) {
-                section {
-                        margin: 0.25rem 0;
-                }
-                li {
-                        margin-top: 0.25rem;
-                }
-
-                section#about {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-gap: 2rem;
-                        
-                }
-                section#about img.poster {
-                        width: 100%;
-                        grid-column: 2;
-                        grid-row: 1;
-                        margin-top: auto;
-                        margin-bottom: auto;
-                }
-                section#about div {
-                        grid-column: 1;
-                }
-        }
-</style>
-
-
