@@ -1,1 +1,1 @@
-i work on what excites me. i can over commit early
+i work on what excites me.
