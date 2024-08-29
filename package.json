@@ -1,5 +1,5 @@
 {
-  "name": "karanravindra",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,21 +7,22 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "format": "prettier --write . --plugin prettier-plugin-astro --plugin prettier-plugin-tailwindcss",
+    "format": "prettier -w . --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.14.5",
-    "typescript": "^5.5.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/postcss": "4.0.0-alpha.19",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.15.1",
+    "astro-icon": "^1.1.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "4.0.0-alpha.19"
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15"
   }
 }

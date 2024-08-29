@@ -1,0 +1,166 @@
+---
+import Layout from "../components/Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <main class="bg-white pb-16 antialiased dark:bg-gray-900 lg:pb-24">
+    <header class="py-12">
+      <div class="mx-auto w-full max-w-screen-lg px-4 text-center">
+        <span class="mb-4 block font-semibold text-gray-900 dark:text-white"
+          >Published <time
+            class="font-normal text-gray-500 dark:text-gray-400"
+            pubdate
+            class="uppercase"
+            datetime="2022-03-08"
+            title="August 3rd, 2022">August 3, 2022, 2:20am EDT</time
+          ></span
+        >
+        <h1
+          class="mx-auto mb-4 max-w-2xl text-2xl font-extrabold leading-none text-gray-900 dark:text-white sm:text-3xl lg:text-4xl"
+        >
+          {frontmatter.title}
+        </h1>
+        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+          Before going digital, you might scribbling down some ideas in a
+          sketchbook.
+        </p>
+      </div>
+    </header>
+    <div
+      class="relative z-20 mx-auto flex max-w-screen-lg justify-center space-x-8 rounded bg-white px-4 dark:bg-gray-900"
+    >
+      <article
+        class="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full max-w-none xl:w-[828px]"
+      >
+        <div
+          class="flex flex-col justify-between border-b border-t border-gray-200 py-6 dark:border-gray-700 lg:flex-row lg:items-center"
+        >
+          <span
+            class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 lg:mb-0"
+            >By <a
+              href="#"
+              rel="author"
+              class="font-bold text-gray-900 no-underline hover:underline dark:text-white"
+              >Karan Ravindra</a
+            >
+          </span>
+          <div>
+            <a
+              href="#"
+              class="mr-2 inline-flex items-center rounded-lg border border-gray-200 bg-white px-6 py-2 text-xs font-medium text-gray-900 no-underline hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+            >
+              <svg
+                class="mr-2 h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
+                ></path>
+              </svg>
+              Tweet
+            </a>
+            <button
+              type="button"
+              class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-6 py-2 text-xs font-medium text-gray-900 no-underline hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+            >
+              <svg
+                class="mr-2 h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 19 19"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7"
+                ></path>
+              </svg>
+              Copy link
+            </button>
+          </div>
+        </div>
+
+        <slot />
+      </article>
+      <aside class="hidden xl:block" aria-labelledby="sidebar-label">
+        <div class="sticky top-6 xl:w-[336px]">
+          <h3 id="sidebar-label" class="sr-only">Sidebar</h3>
+          <div
+            class="mb-6 rounded-lg border border-gray-200 p-4 dark:border-gray-700"
+          >
+            <h4
+              class="mb-4 text-sm font-bold uppercase text-gray-900 dark:text-white"
+            >
+              Latest news
+            </h4>
+            <div class="mb-6">
+              <h5
+                class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white"
+              >
+                Our first office
+              </h5>
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Over the past year, Volosoft has undergone many changes! After
+                months of preparation.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-medium text-primary-600 underline underline-offset-4 hover:no-underline dark:text-primary-500"
+              >
+                Read in 9 minutes
+              </a>
+            </div>
+            <div class="mb-6">
+              <h5
+                class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white"
+              >
+                Enterprise Design tips
+              </h5>
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Over the past year, Volosoft has undergone many changes! After
+                months of preparation.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-medium text-primary-600 underline underline-offset-4 hover:no-underline dark:text-primary-500"
+              >
+                Read in 14 minutes
+              </a>
+            </div>
+            <div class="mb-6">
+              <h5
+                class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white"
+              >
+                Our first project with React
+              </h5>
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Over the past year, Volosoft has undergone many changes! After
+                months of preparation.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-medium text-primary-600 underline underline-offset-4 hover:no-underline dark:text-primary-500"
+              >
+                Read in 4 minutes
+              </a>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-3 flex h-48 w-full items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800"
+            >
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</Layout>
