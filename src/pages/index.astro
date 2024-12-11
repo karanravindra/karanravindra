@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const blogPosts = await getCollection("blog");
 ---
 
 <Layout title="Home">
@@ -8,4 +11,23 @@ import Layout from "../layouts/Layout.astro";
     Astro is a new kind of static site builder that delivers lightning-fast
     performance and modern developer productivity.
   </p>
+
+  <h2>My posts</h2>
+  <ul class="list-disc">
+    <li>
+      Now this is a story all about how, my life got flipped-turned upside down
+    </li>
+
+    <li>
+      Now this is a story all about how, my life got flipped-turned upside down
+    </li>
+
+    {
+      blogPosts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>
