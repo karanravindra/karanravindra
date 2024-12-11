@@ -3,7 +3,7 @@ import "../styles.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Posthog from "../components/Posthog.astro";
+import Posthog from "../components/Posthog.html";
 
 interface Props {
   title: string;
@@ -40,9 +40,10 @@ const { title } = Astro.props;
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
+    <Posthog />
+
     <title>{title}</title>
   </head>
-  <Posthog />
   <body class="flex min-h-screen flex-col bg-white dark:bg-gray-900">
     <Header />
     <main class="flex flex-grow flex-col pt-20">
@@ -50,5 +51,4 @@ const { title } = Astro.props;
     </main>
     <Footer />
   </body>
-
 </html>
