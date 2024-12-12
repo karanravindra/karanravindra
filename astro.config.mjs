@@ -19,4 +19,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkModifiedTime, remarkReadingTime],
   },
+  prefetch: {
+    prefetchAll: true
+  }
 });
