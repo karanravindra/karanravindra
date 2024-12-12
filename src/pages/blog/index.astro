@@ -1,34 +1,23 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 const blogPosts = await getCollection("blog");
+const allTags = blogPosts.reduce((acc, post) => {
+  post.data.tags?.forEach((tag) => {
+    if (!acc.includes(tag)) {
+      acc.push(tag);
+    }
+  });
+  return acc;
+}, []);
 ---
 
 <Layout title="Home">
   <main class="container flex-1 px-4 mx-auto">
-    <section class="mt-16">
-      <h1 class="mb-6 text-2xl font-semibold">Welcome to Astro</h1>
-      <p class="mb-4 text-sm">
-        Astro is a new kind of static site builder that delivers lightning-fast
-        performance and modern developer productivity.
-      </p>
-      <span class="flex space-x-2 rounded">
-        <p class="text-sm">Find me on</p>
-        <a
-          href="https://github.com/karanravindra"
-          class="p-1 hover:text-blue-700"
-        >
-          <Icon name="tabler:brand-github" />
-        </a>
-      </span>
-    </section>
-
-    <section class="mt-16 first:mt-0">
-      <a href="/posts" class="hover:text-blue-700">
-        <h2 class="text-xl font-bold">Posts</h2>
-      </a>
+    <section class="mt-12">
+      <h1 class="mb-6 text-2xl font-semibold">Posts</h1>
       <ul class="mt-4">
         {
           blogPosts.map((post) => (
@@ -51,5 +40,23 @@ const blogPosts = await getCollection("blog");
         }
       </ul>
     </section>
+
+    <!-- <section class="mt-12">
+      <h2 class="text-xl font-bold">Tags</h2>
+      <ul class="flex flex-wrap">
+        {
+          allTags.map((tag) => (
+            <li class="mr-2">
+              <a href={`/blog/tags/${tag}`} class="text-sm underline hover:text-blue-700">
+                #{tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/tags" class="text-sm hover:text-blue-700"
+        >All tags <Icon name="tabler:arrow-right" class="inline" /></a
+      >
+    </section> -->
   </main>
 </Layout>

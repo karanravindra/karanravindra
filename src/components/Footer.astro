@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t">
+  <div class="container flex justify-between p-4 mx-auto">
+    <p class="text-sm">&COPY; {year} Karan Ravindra</p>
+
+    <div class="flex space-x-2">
+      <a
+        href="https://github.com/karanravindra"
+        class="hover:text-blue-700"
+        aria-label="My GitHub Profile"
+      >
+        <Icon name="tabler:brand-github" aria-hidden="true" />
+      </a>
+      <a
+        href="https://linkedin.com/in/karanravindra"
+        class="hover:text-blue-700"
+        aria-label="My LinkedIn Profile"
+      >
+        <Icon name="tabler:brand-linkedin" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</footer>

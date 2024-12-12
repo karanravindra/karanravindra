@@ -5,13 +5,8 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "src/content/blog" }),
   schema: z.object({
     title: z.string(),
-  }),
-});
-const caseStudy = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "src/content/case-study" }),
-  schema: z.object({
-    title: z.string(),
+    tags: z.optional(z.array(z.string())),
   }),
 });
 
-export const collections = { blog, caseStudy };
+export const collections = { blog };

@@ -1,0 +1,131 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header class="border-b">
+  <div
+    class="container flex flex-row items-center w-full p-4 mx-auto space-x-6"
+  >
+    <a href="/" class="text-xl font-semibold hover:text-blue-700 text-nowrap"
+      >Karan Ravindra</a
+    >
+
+    <nav class="flex w-full space-x-4">
+      <a
+        href="/"
+        class="text-sm hover:text-blue-700 hover:underline underline-offset-4"
+        >Home</a
+      >
+      <a
+        href="/blog"
+        class="text-sm hover:text-blue-700 hover:underline underline-offset-4"
+        >Blog</a
+      >
+      <a
+        href="/about"
+        class="text-sm hover:text-blue-700 hover:underline underline-offset-4"
+        >About</a
+      >
+    </nav>
+
+    <div class="flex space-x-2">
+      <button
+        aria-label="Search"
+        popovertarget="search-modal"
+        class="p-1 rounded hover:bg-stone-50"
+      >
+        <Icon name="tabler:search" aria-hidden="true" />
+      </button>
+      <button
+        aria-label="Toggle Color Theme"
+        onclick="theme.setTheme(theme.getTheme() === 'dark' ? 'light' : 'dark')"
+        class="p-1 rounded hover:bg-stone-50"
+      >
+        <Icon name="tabler:moon" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  popover
+  id="search-modal"
+  class="absolute w-full p-2 m-4 transform -translate-x-1/2 -translate-y-1/2 bg-white divide-y rounded-lg shadow-lg md:max-w-screen-md sm:max-w-screen-sm top-1/2 left-1/2"
+>
+  <header class="flex items-center justify-between p-2 space-x-2">
+    <label for="Search">
+      <Icon name="tabler:search" />
+    </label>
+    <input
+      type="text"
+      id="Search"
+      placeholder="Search"
+      class="w-full text-sm focus:outline-none"
+    />
+    <span class="px-2 py-1 text-xs rounded bg-stone-200">ESC</span>
+  </header>
+  <div class="p-2">
+    <p class="text-sm">Search results will appear here</p>
+  </div>
+</div>
+
+<style>
+  #search-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<!-- <script is:inline data-default-theme={"auto"}>
+  window.theme ??= (() => {
+    const defaultTheme =
+      document.currentScript.getAttribute("data-default-theme");
+    const storageKey = "theme";
+    const store =
+      typeof localStorage !== "undefined"
+        ? localStorage
+        : { getItem: () => null, setItem: () => {} };
+
+    const mediaMatcher = window.matchMedia("(prefers-color-scheme: light)");
+    let systemTheme = mediaMatcher.matches ? "light" : "dark";
+    mediaMatcher.addEventListener("change", (event) => {
+      systemTheme = event.matches ? "light" : "dark";
+      applyTheme(theme.getTheme());
+    });
+
+    function applyTheme(theme) {
+      const resolvedTheme = theme === "auto" ? systemTheme : theme;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.style.colorScheme = resolvedTheme;
+      document.dispatchEvent(
+        new CustomEvent("theme-changed", {
+          detail: { theme, systemTheme, defaultTheme },
+        })
+      );
+    }
+
+    function setTheme(theme = defaultTheme) {
+      store.setItem(storageKey, theme);
+      applyTheme(theme);
+    }
+
+    function getTheme() {
+      return store.getItem(storageKey) || defaultTheme;
+    }
+
+    function getSystemTheme() {
+      return systemTheme;
+    }
+
+    function getDefaultTheme() {
+      return defaultTheme;
+    }
+
+    return { setTheme, getTheme, getSystemTheme, getDefaultTheme };
+  })();
+  theme.setTheme(theme.getTheme());
+</script>
+<script>
+  document.addEventListener("astro:after-swap", () =>
+    window.theme.setTheme(window.theme.getTheme())
+  );
+</script> -->
